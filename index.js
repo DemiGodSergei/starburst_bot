@@ -1,11 +1,15 @@
-require('dotenv').config(); //initialize dotenv
-const Discord = require('discord.js'); //import discord.js
+// Require the necessary discord.js classes
+const { Client, Intents } = require('discord.js');
+// Create a new client instance
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+// Bring in the .env file
+require('dotenv').config()
 
-const client = new Discord.Client(); //create new client
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+// When the client is ready, run this code (only once)
+client.once('ready', () => {
+	console.log('Ready!');
 });
 
-//make sure this line is the last line
+
 client.login(process.env.CLIENT_TOKEN); //login bot using token
