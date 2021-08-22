@@ -5,9 +5,10 @@ require('dotenv').config()
 // const { clientId, guildId, token } = require('./config.json');
 
 const commands = [
-	new SlashCommandBuilder().setName('ping').setDescription('Replies with pong!'),
+	new SlashCommandBuilder().setName('ping').setDescription('Replies with pong!!!'),
 	new SlashCommandBuilder().setName('server').setDescription('Replies with server info!'),
 	new SlashCommandBuilder().setName('user').setDescription('Replies with user info!'),
+	new SlashCommandBuilder().setName('beep').setDescription('Replies with user boop!')
 ]
 	.map(command => command.toJSON());
 
